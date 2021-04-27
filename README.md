@@ -8,7 +8,7 @@ In didFinishLaunchingWithOptions method:
 ```swift
 UserAcquisition.shared.configure(withAPIKey: "APIKey")
 or
-UserAcquisition.shared.configure(withAPIKey: "APIKey", urlRequest: "Here select URL from Enum or enter your")
+UserAcquisition.shared.configure(withAPIKey: "APIKey", urlRequest: "Here select URL")
 ```
 After successful purchase:
 ```swift
