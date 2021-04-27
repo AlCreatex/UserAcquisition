@@ -1,19 +1,7 @@
 # UserAcquisition
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-UserAcquisition is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'UserAcquisition', :git => "https://github.com/inapps-io/UserAcquisition.git"
-```
+## CocoaPods Install
+Add ```pod 'UserAcquisition', :git => "https://github.com/inapps-io/UserAcquisition.git"``` to your Podfile. "CRGeneralManager" is the name of the library.
 
 ## Usage
 In didFinishLaunchingWithOptions method:
@@ -21,19 +9,6 @@ In didFinishLaunchingWithOptions method:
 UserAcquisition.shared.configure(withAPIKey: "APIKey")
 or
 UserAcquisition.shared.configure(withAPIKey: "APIKey", urlRequest: "Here select URL from Enum or enter your")
-
-struct Urls: RawRepresentable {
-        
-    public var rawValue: String
-        
-    public static let inapps = Urls(rawValue: "https://api.inapps.io/v2")
-    public static let subr = Urls(rawValue: "https://api.subr.app/v2")
-    public static let chkmob = Urls(rawValue: "https://api.chkmob.com/v2")
-    public static let bittiu = Urls(rawValue: "https://api.bittiu.com/v2")
-    public static let trklabs = Urls(rawValue: "https://api.trklabs.com/v2")
-    public static let devpng = Urls(rawValue: "https://api.devpng.com/v2")
-    public static let pingfront = Urls(rawValue: "https://api.pingfront.com/v2")
-}
 ```
 After successful purchase:
 ```swift
@@ -56,18 +31,6 @@ extension AppDelegate: AppsFlyerTrackerDelegate {
     }
 }
 ```
-Add Adjust:
-```swift
-import Adjust
-
-extension AppDelegate: AdjustDelegate {
-    func adjustAttributionChanged(_ attribution: ADJAttribution?) {
-        if let data = attribution?.dictionary() {
-            UserAcquisition.shared.conversionInfo.setAdjustData(data)
-        }
-    }
-}
-```
 Add YandexMetrica:
 ```swift
 import YandexMobileMetrica
@@ -81,13 +44,3 @@ Add Amplitude:
 UserAcquisition.shared.conversionInfo.amplitudeId = "Amplitude_KEY"
 ```
 
-## Author
-
-Mikhail Verenich
-
-Support:
-hi@inapps.io
-
-## License
-
-UserAcquisition is available under the MIT license. See the LICENSE file for more info.
