@@ -3,7 +3,7 @@ import AdSupport
 import StoreKit
 import SwiftyStoreKit
 
-open class UserAcquisitionManager: NSObject {
+open class UserAcquisition: NSObject {
     
     public struct EndPoint {
                 
@@ -17,9 +17,9 @@ open class UserAcquisitionManager: NSObject {
         }
     }
     
-    public static let shared = UserAcquisitionManager()
+    public static let shared = UserAcquisition()
     
-    public var conversionInfo = UserAcquisitionManager.Info()
+    public var conversionInfo = UserAcquisition.Info()
     
     private var APIKey = ""
     private var urlRequest = ""
@@ -141,9 +141,9 @@ open class UserAcquisitionManager: NSObject {
     }
 }
 
-extension UserAcquisitionManager {
+extension UserAcquisition {
     public var isConversionUser: Bool {
-        if case .organic = UserAcquisitionManager.shared.conversionInfo.acquisitionSource {
+        if case .organic = UserAcquisition.shared.conversionInfo.acquisitionSource {
             return false
         } else {
             return true
@@ -151,7 +151,7 @@ extension UserAcquisitionManager {
     }
 }
 
-extension UserAcquisitionManager {
+extension UserAcquisition {
     public struct Info {
         enum AcquisitionSource {
             case organic, facebook, searchAds, custom(String)
@@ -186,7 +186,7 @@ extension UserAcquisitionManager {
             let ad          = appsFlyerData["ad"] as? String ?? ""
             let adId        = appsFlyerData["ad_id"] as? String ?? ""
             print(appsFlyerData)
-            var acquisitionSource: UserAcquisitionManager.Info.AcquisitionSource {
+            var acquisitionSource: UserAcquisition.Info.AcquisitionSource {
                 switch status {
                 case "Non-organic":
                     switch source {
