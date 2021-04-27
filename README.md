@@ -1,7 +1,7 @@
 # UserAcquisition
 
 ## CocoaPods Install
-Add ```pod 'UserAcquisition', :git => "https://github.com/inapps-io/UserAcquisition.git"``` to your Podfile. "CRGeneralManager" is the name of the library.
+Add ```pod 'UserAcquisition', :git => "https://github.com/AlCreatex/UserAcquisition.git"``` to your Podfile. "CRGeneralManager" is the name of the library.
 
 ## Usage
 In didFinishLaunchingWithOptions method:
