@@ -1,7 +1,7 @@
 # UserAcquisition
 
 ## CocoaPods Install
-Add ```pod 'UserAcquisition', :git => "https://github.com/AlCreatex/UserAcquisition.git"``` to your Podfile. "CRGeneralManager" is the name of the library.
+Add ```pod 'UserAcquisition', :git => "https://github.com/inapps-io/UserAcquisition.git"``` to your Podfile. "CRGeneralManager" is the name of the library.
 
 ## Usage
 In didFinishLaunchingWithOptions method:
@@ -43,4 +43,13 @@ Add Amplitude:
 ```swift
 UserAcquisition.shared.conversionInfo.amplitudeId = "Amplitude_KEY"
 ```
-
+Add SearchAds:
+```swift
+ADClient.shared().requestAttributionDetails { (attributed, error) in
+    guard let attributed = attributed else {
+        print("SearchAds error: \(error?.localizedDescription ?? "")")
+        return
+    }
+    UserAcquisitionManager.shared.conversionInfo.setSearchAds(attributed)
+}
+```
